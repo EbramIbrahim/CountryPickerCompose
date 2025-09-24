@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -37,7 +36,7 @@ fun CountryCodePicker(
         verticalAlignment = Alignment.CenterVertically
     ) {
 
-        CountryItemView(country = country,)
+        CountryItemView(country = country)
 
         if (isPickerOpen) {
                 CountryPickerDialog(
