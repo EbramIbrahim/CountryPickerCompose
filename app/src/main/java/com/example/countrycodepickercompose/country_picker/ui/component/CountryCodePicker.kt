@@ -37,10 +37,7 @@ fun CountryCodePicker(
         verticalAlignment = Alignment.CenterVertically
     ) {
 
-        CountryItemView(
-            country = country,
-            textStyle = MaterialTheme.typography.bodyMedium,
-        )
+        CountryItemView(country = country,)
 
         if (isPickerOpen) {
                 CountryPickerDialog(
@@ -55,11 +52,8 @@ fun CountryCodePicker(
                     listOfCountry = countryList,
                 )
         }
-
     }
-
 }
-
 
 @Preview(showBackground = true)
 @Composable

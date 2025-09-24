@@ -13,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.countrycodepickercompose.country_picker.ui.CountryPickerScreen
 import com.example.countrycodepickercompose.country_picker.ui.component.CountryCodePickerTextField
 import com.example.countrycodepickercompose.data.Country
 import com.example.countrycodepickercompose.ui.theme.CountryCodePickerComposeTheme
@@ -26,20 +27,21 @@ class MainActivity : ComponentActivity() {
                 var text by remember {
                     mutableStateOf("")
                 }
-                var country by remember {
-                    mutableStateOf(Country.Egypt)
+                var isChecked by remember {
+                    mutableStateOf(false)
                 }
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CountryCodePickerTextField(
+                    CountryPickerScreen(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(innerPadding)
-                            .padding(horizontal = 16.dp),
+                            .padding(innerPadding),
                         onValueChange = { value ->
                             text = value
                         },
                         number = text,
-                        selectedCountry = country,
+                        onChecked = {
+                            isChecked = it
+                        },
+                        isChecked = isChecked,
                     )
                 }
             }

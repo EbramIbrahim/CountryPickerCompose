@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,7 +20,6 @@ import com.example.countrycodepickercompose.utils.Utils.getEmojiFlag
 @Composable
 fun CountryItemView(
     country: Country,
-    textStyle: TextStyle,
 ) {
 
     Row(
@@ -29,15 +29,8 @@ fun CountryItemView(
 
         Text(
             text = getEmojiFlag(country.countryIso),
-            modifier = Modifier.padding(start = 5.dp, end = 10.dp).size(20.dp),
-            style = textStyle
-        )
-
-
-        Text(
-            text = "(" + country.countryIso + ")",
-            modifier = Modifier.padding(end = 6.dp),
-            style = textStyle
+            modifier = Modifier.padding(start = 5.dp, end = 5.dp).size(20.dp),
+            style = MaterialTheme.typography.bodyMedium
         )
 
         Icon(
@@ -47,7 +40,7 @@ fun CountryItemView(
         Text(
             text = country.countryCode,
             modifier = Modifier.padding(end = 5.dp),
-            style = textStyle
+            style = MaterialTheme.typography.bodyMedium
         )
     }
 }
