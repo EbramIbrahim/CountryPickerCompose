@@ -16,7 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.countrycodepickercompose.data.Country
+import com.example.countrycodepickercompose.country_picker.data.Country
+import com.example.countrycodepickercompose.country_picker.utils.Utils
 
 
 @Composable
@@ -33,11 +34,16 @@ fun CountryCodePickerTextField(
         mutableStateOf(selectedCountry)
     }
 
+    var errorMessage by remember {
+        mutableStateOf<String?>(null)
+    }
+
 
     OutlinedTextField(
         value = number,
         onValueChange = {
             onValueChange(it)
+            errorMessage = Utils.validatePhoneNumber(it)
         },
         modifier = modifier,
         textStyle = MaterialTheme.typography.bodyMedium,
@@ -61,7 +67,13 @@ fun CountryCodePickerTextField(
         keyboardOptions = KeyboardOptions.Default.copy(
             keyboardType = KeyboardType.Phone
         ),
-        colors = OutlinedTextFieldDefaults.colors()
+        colors = OutlinedTextFieldDefaults.colors(),
+        isError = errorMessage != null,
+        supportingText = {
+            errorMessage?.let {
+                Text(text = it)
+            }
+        }
     )
 
 

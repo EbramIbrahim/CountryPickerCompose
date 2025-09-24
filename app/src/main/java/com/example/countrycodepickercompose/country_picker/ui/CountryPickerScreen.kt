@@ -25,7 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.countrycodepickercompose.country_picker.ui.component.CountryCodePickerTextField
-import com.example.countrycodepickercompose.data.Country
+import com.example.countrycodepickercompose.country_picker.data.Country
 
 @Composable
 fun CountryPickerScreen(

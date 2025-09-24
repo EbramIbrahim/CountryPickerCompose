@@ -1,4 +1,4 @@
-package com.example.countrycodepickercompose.data
+package com.example.countrycodepickercompose.country_picker.data
 
 enum class Country(val countryIso: String, val countryName: String, val countryCode: String) {
     Andorra("AD", "Andorra", "+376"), UnitedArabEmirates(

@@ -13,8 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.countrycodepickercompose.data.Country
-import com.example.countrycodepickercompose.utils.Utils.getEmojiFlag
+import com.example.countrycodepickercompose.country_picker.data.Country
+import com.example.countrycodepickercompose.country_picker.utils.Utils.getEmojiFlag
 
 @Composable
 fun CountryItemView(
